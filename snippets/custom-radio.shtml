@@ -1,0 +1,168 @@
+						<div class="snippet">
+							<div class="snippet-head">
+								<h5>
+									<span class="snippet-title">custom radio button</span>
+									<small>&nbsp;</small>
+								</h5>
+							</div><!-- /.snippet-head -->
+
+							<div class="snippet-body">
+								<div class="snippet-simple">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;div class="radio-wrapper"&gt;
+	&lt;input type="radio" name="radios" id="radio" /&gt;
+
+	&lt;label for="radio"&gt;
+		&lt;span class="radio"&gt;&amp;nbsp;&lt;/span&gt;
+		&lt;span class="label"&gt;Radio Label&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;&lt;!-- /.radio-wrapper --&gt;
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.radio-wrapper { font-size: 0; line-height: 0; }
+.radio-wrapper input[type="radio"] { display: none; }
+.radio-wrapper label { display: block; cursor: pointer; }
+.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+.radio { position: relative; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #55595d; margin-right: 15px; background: #fff; }
+.radio:after { position: absolute; top: 4px; left: 4px; content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: #f37230; -webkit-transform: scale(0); transform: scale(0); }
+.radio-wrapper input[type="radio"]:checked + label .radio:after { -webkit-transform: scale(1); transform: scale(1); }
+
+.radio:after {
+	-webkit-transition: -webkit-transform .3s;
+       -moz-transition:     -moz-transform .3s;
+            -o-transition:          -o-transform .3s;
+                transition: 		       transform .3s; 
+}
+</code>
+</pre>											
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+							
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+										<div class="snippet-result">
+											<div class="radio-wrapper radio-inline">
+												<input type="radio" name="radios" id="radio1" checked />
+											
+												<label for="radio1">
+													<span class="radio">&nbsp;</span>
+													<span class="label">Radio Checked</span>
+												</label>
+											</div><!-- /.radio-wrapper -->
+											
+											<div class="radio-wrapper radio-inline">
+												<input type="radio" name="radios" id="radio2" />
+											
+												<label for="radio2">
+													<span class="radio">&nbsp;</span>
+													<span class="label">Radio Unchecked</span>
+												</label>
+											</div><!-- /.radio-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.snippet-simple .radio { position: relative; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #55595d; margin-right: 15px; background: #fff; }
+										.snippet-simple .radio:after { position: absolute; top: 4px; left: 4px; content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: #f37230; -webkit-transform: scale(0); transform: scale(0); }
+
+										.snippet-simple .radio-wrapper input[type="radio"]:checked + label .radio:after { -webkit-transform: scale(1); transform: scale(1); }
+
+										.snippet-simple .radio:after {
+											-webkit-transition: -webkit-transform .3s;
+											   -moz-transition:    -moz-transform .3s;
+											     -o-transition: 	 -o-transform .3s;
+											        transition: 		transform .3s; 
+										}
+									</style>
+								
+								</div><!-- /.snippet-simple -->
+
+								<div class="snippet-advanced">
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+										
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.radio-wrapper { font-size: 0; line-height: 0; }
+.radio-wrapper input[type="radio"] { display: none; }
+.radio-wrapper label { display: block; width: 50px; border-radius: 20px; background: #55595d; cursor: pointer; }
+.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+.radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #55595d; background: #fff; -webkit-transform: translateX(0%); transform: translateX(0%); }
+.radio-wrapper input[type="radio"]:checked + label .radio { background: #f37230; -webkit-transform: translateX(26px); transform: translateX(26px); }
+
+.radio:after {
+	-webkit-transition: -webkit-transform .3s, background .3s;
+       -moz-transition:     -moz-transform .3s, background .3s;
+            -o-transition:          -o-transform .3s, background .3s;
+                transition: 		       transform .3s, background .3s; 
+}
+</code>
+</pre>
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="radio-wrapper radio-inline">
+												<input type="radio" name="radio" id="radio8" />
+											
+												<label for="radio8">
+													<span class="radio">&nbsp;</span>
+												</label>
+											</div><!-- /.radio-wrapper -->
+
+											<div class="radio-wrapper radio-inline">
+												<input type="radio" name="radio" id="radio9" />
+											
+												<label for="radio9">
+													<span class="radio">&nbsp;</span>
+												</label>
+											</div><!-- /.radio-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.snippet-advanced .radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #55595d; background: #fff; -webkit-transform: translateX(0%); transform: translateX(0%); }
+										.snippet-advanced .radio-wrapper label { position: relative; width: 50px; border-radius: 20px; background: #55595d; }
+
+										.snippet-advanced .radio-wrapper input[type="radio"]:checked + label .radio { background: #f37230; -webkit-transform: translateX(26px); transform: translateX(26px); }
+										
+										.snippet-advanced .radio {
+											-webkit-transition: -webkit-transform .3s, background .3s;
+											   -moz-transition:    -moz-transform .3s, background .3s;
+											     -o-transition: 	 -o-transform .3s, background .3s;
+											        transition: 		transform .3s, background .3s; 
+										}
+									</style>
+								</div><!-- /.snippet-advanced -->
+							</div><!-- /.snippet-body -->
+						</div><!-- /.snippet -->
+
+						<style>
+							.radio-wrapper input[type="radio"] { display: none; }
+							.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+							.snippet-result { min-height: 36px; padding: 20px; }
+							.radio-inline { display: inline-block; }
+							.radio-inline ~ .radio-inline { margin-left: 20px; }
+							.radio-wrapper { position: relative; z-index: 9; font-size: 0; line-height: 0; }
+							.radio-wrapper label { display: block; cursor: pointer; }
+						</style>
+
+						
+

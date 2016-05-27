@@ -1,0 +1,280 @@
+						<div class="snippet">
+							<div class="snippet-head">
+								<h5>
+									<span class="snippet-title">custom checkbox</span>
+									<small>&nbsp;</small>
+								</h5>
+							</div><!-- /.snippet-head -->
+
+							<div class="snippet-body">
+								<div class="snippet-simple">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;div class="checkbox-wrapper"&gt;
+	&lt;input type="checkbox" name="checkboxs" id="checkbox" /&gt;
+
+	&lt;label for="checkbox"&gt;
+		&lt;span class="checkbox"&gt;&amp;nbsp;&lt;/span&gt;
+		&lt;span class="label"&gt;Checkbox Label&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;&lt;!-- /.checkbox-wrapper --&gt;
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { margin-top: 10px; font-size: 0; line-height: 0; }
+.checkbox-wrapper input[type="checkbox"]{ display: none; }
+.checkbox-wrapper label { position: relative; z-index: 2; display: block; cursor: pointer; }
+.checkbox-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+.checkbox { position: relative; width: 19px; height: 19px; border: 2px solid #55595d; margin-right: 10px; background: #fff; box-sizing: border-box; }
+
+.checkbox:before,
+.checkbox:after { position: absolute; content: ''; width: 3px; background: #f37230; opacity: 0; }
+.checkbox:before { top: 6px; left: 3px; height: 6px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+.checkbox:after { top: 2px; left: 7px; height: 10px; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:before,
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:after { opacity: 1; }
+
+.checkbox:before,
+.checkbox:after {
+	-webkit-transition: opacity .3s;
+       -moz-transition: opacity .3s;
+            -o-transition: opacity .3s;
+                transition: opacity .3s; 
+}
+</code>
+</pre>											
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+							
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+										<div class="snippet-result">
+											<div class="checkbox-wrapper checkbox-inline">
+												<input type="checkbox" name="checkboxs" id="checkbox1" checked />
+											
+												<label for="checkbox1">
+													<span class="checkbox">&nbsp;</span>
+													<span class="label">Checkbox Checked</span>
+												</label>
+											</div><!-- /.checkbox-wrapper -->
+											
+											<div class="checkbox-wrapper checkbox-inline">
+												<input type="checkbox" name="checkboxs" id="checkbox2" />
+											
+												<label for="checkbox2">
+													<span class="checkbox">&nbsp;</span>
+													<span class="label">Checkbox Unchecked</span>
+												</label>
+											</div><!-- /.checkbox-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.snippet-simple .checkbox-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+										.snippet-simple .checkbox { margin-right: 10px; }
+
+										.snippet-simple .checkbox:before,
+										.snippet-simple .checkbox:after { position: absolute; content: ''; width: 3px; background: #f37230; opacity: 0; }
+										.snippet-simple .checkbox:before { top: 6px; left: 3px; height: 6px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+										.snippet-simple .checkbox:after { top: 2px; left: 7px; height: 10px; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+										.snippet-simple .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:before,
+										.snippet-simple .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:after { opacity: 1; }
+
+										.snippet-simple .checkbox:before,
+										.snippet-simple .checkbox:after {
+											-webkit-transition: opacity .3s;
+											   -moz-transition: opacity .3s;
+											     -o-transition: opacity .3s;
+											        transition: opacity .3s; 
+										}
+									</style>
+								
+								</div><!-- /.snippet-simple -->
+
+								<div class="snippet-advanced">
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+										
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { font-size: 0; line-height: 0; }
+.checkbox-wrapper input[type="checkbox"]{ display: none; }
+.checkbox-wrapper label { overflow: hidden; position: relative; z-index: 2; display: block; width: 50px; border: 1px solid #ccc; border-radius: 20px; background: #fff; cursor: pointer; }
+.checkbox { position: relative; z-index: 2; display: block; width: 24px; height: 24px; border: 2px solid #55595d; border-radius: 50%; background: #fff; box-sizing: border-box; -webkit-transform: translateX(0px); transform: translateX(0px); }
+
+.label { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; display: block; font-size: 12px; line-height: 17px; }
+.label:before,
+.label:after { position: absolute; top: 3px; bottom: 3px; width: 90%; }
+.label-text:before { left: 14%; content: 'on'; color: #fff; }
+.label-text:after { right: 14%; content: 'off'; text-align: right; }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox { -webkit-transform: translateX(26px); transform: translateX(26px); }
+.checkbox-wrapper input[type="checkbox"]:checked + label .label { background: #55595d; }
+
+.checkbox {
+	-webkit-transition: -webkit-transform .3s;
+       -moz-transition:     -moz-transform .3s;
+            -o-transition:          -o-transform .3s;
+                transition: 		       transform .3s; 
+}
+
+.label {
+	-webkit-transition: background .3s;
+       -moz-transition: background .3s;
+            -o-transition: background .3s;
+                transition: background .3s; 
+}
+
+</code>
+</pre>
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="checkbox-wrapper checkbox-inline">
+												<input type="checkbox" name="checkbox" id="checkbox8" checked />
+											
+												<label for="checkbox8">
+													<span class="checkbox"></span>
+													<span class="label label-text">&nbsp;</span>
+												</label>
+											</div><!-- /.checkbox-wrapper -->
+											
+											<div class="checkbox-wrapper checkbox-inline ">
+												<input type="checkbox" name="checkbox" id="checkbox9" />
+											
+												<label for="checkbox9">
+													<span class="checkbox"></span>
+													<span class="label label-icons">&nbsp;</span>
+												</label>
+											</div><!-- /.checkbox-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.snippet-advanced .checkbox-wrapper label { overflow: hidden; width: 50px; border: 1px solid #ccc; border-radius: 20px; background: #fff; }
+
+										.snippet-advanced .checkbox { position: relative; z-index: 2; display: block; width: 24px; height: 24px; border: 2px solid #55595d; border-radius: 50%; background: #fff; box-sizing: border-box; -webkit-transform: translateX(0px); transform: translateX(0px); }
+										.snippet-advanced .label { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; display: block; font-size: 12px; line-height: 17px; }
+
+										.snippet-advanced .label:before,
+										.snippet-advanced .label:after { position: absolute; top: 3px; bottom: 3px; width: 90%; }
+										.snippet-advanced .label:before { left: 14%; color: #fff; }
+										.snippet-advanced .label:after { right: 14%; text-align: right; }
+
+										.snippet-advanced .label-text:before { content: 'on'; }
+										.snippet-advanced .label-text:after { content: 'off'; }
+
+										.snippet-advanced .label-icons:before { content: '\2714'; font-size: 16px; }
+										.snippet-advanced .label-icons:after { content: '\2718';  font-size: 16px; }
+
+										.snippet-advanced .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox { -webkit-transform: translateX(26px); transform: translateX(26px); }
+										.snippet-advanced .checkbox-wrapper input[type="checkbox"]:checked + label .label { background: #55595d; }
+
+										.snippet-advanced .checkbox {
+											-webkit-transition: -webkit-transform .3s;
+											   -moz-transition:    -moz-transform .3s;
+											     -o-transition: 	 -o-transform .3s;
+											        transition: 		transform .3s; 
+										}
+
+										.snippet-advanced .label {
+											-webkit-transition: background .3s;
+											   -moz-transition: background .3s;
+											     -o-transition: background .3s;
+											        transition: background .3s; 
+										}
+									</style>
+								</div><!-- /.snippet-advanced -->
+
+								<div class="snippet-master">
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+										
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { overflow: hidden; position: relative; display: inline-block; min-width: 100px; height: 28px; border: 1px solid rgba(0, 0, 0, 0.1); font-size: 0; line-height: 0; text-align: left; vertical-align: middle; }
+.checkbox-wrapper input[type="checkbox"] { display: none; }
+
+.checkbox-wrapper label { position: absolute; top: 0; left: 0; bottom: 0; display: inline-block; width: 149%; cursor: pointer; -webkit-transform: translateX(-33%); transform: translateX(-33%); }
+.checkbox-wrapper label:before,
+.checkbox-wrapper label:after { position: absolute; top: 0; bottom: 0; width: 33%; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-family:'FontAwesome'; font-size: 14px; line-height: 26px; text-align: center; }
+.checkbox-wrapper label:before { left: 0; content: '\2714'; background: #55595d; color: #fff; }
+.checkbox-wrapper label:after { right: 0; content: '\2718'; background: #f9f9f9; color: #555; }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label { -webkit-transform: translateX(0%); transform: translateX(0%); }
+
+.checkbox-wrapper label {
+	-webkit-transition: -webkit-transform .5s;
+       -moz-transition:     -moz-transform .5s;
+            -o-transition:          -o-transform .5s;
+                transition: 		       transform .5s; 
+}
+
+</code>
+</pre>
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="checkbox-wrapper">
+												<input type="checkbox" name="checkbox" id="master-checkbox" />
+												<label for="master-checkbox"></label>
+											</div><!-- /.checkbox-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.snippet-master .checkbox-wrapper { overflow: hidden; position: relative; display: inline-block; min-width: 100px; height: 28px; border: 1px solid rgba(0, 0, 0, 0.1); font-size: 0; line-height: 0; text-align: left; vertical-align: middle; }
+										.snippet-master .checkbox-wrapper input[type="checkbox"] { display: none; }
+										.snippet-master .checkbox-wrapper input[type="checkbox"]:checked + label { -webkit-transform: translateX(0%); transform: translateX(0%); }
+
+										.snippet-master .checkbox-wrapper label { position: absolute; top: 0; left: 0; bottom: 0; display: inline-block; width: 149%; cursor: pointer; -webkit-transform: translateX(-33%); transform: translateX(-33%); }
+										.snippet-master .checkbox-wrapper label:before,
+										.snippet-master .checkbox-wrapper label:after { position: absolute; top: 0; bottom: 0; width: 33%; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-family:'FontAwesome'; font-size: 14px; line-height: 26px; text-align: center; }
+
+										.snippet-master .checkbox-wrapper label:before { left: 0; content: '\2714'; background: #55595d; color: #fff; }
+										.snippet-master .checkbox-wrapper label:after { right: 0; content: '\2718'; background: #f9f9f9; color: #555; }
+
+										.snippet-master label {
+											-webkit-transition: -webkit-transform .3s;
+											   -moz-transition:    -moz-transform .3s;
+											     -o-transition: 	 -o-transform .3s;
+											        transition: 		transform .3s; 
+										}
+									</style>
+								</div><!-- /.snippet-master -->
+						</div><!-- /.snippet-body -->
+					</div><!-- /.snippet -->
+
+					<style>
+						.checkbox-inline { display: inline-block; }
+						.checkbox-inline ~ .checkbox-inline { margin-left: 20px; }
+
+						.checkbox-wrapper { margin-top: 10px; font-size: 0; line-height: 0; }
+						.checkbox-wrapper input[type="checkbox"]{ display: none; }
+						.checkbox-wrapper label { position: relative; z-index: 2; display: block; cursor: pointer; }
+						.checkbox { position: relative; width: 19px; height: 19px; border: 2px solid #55595d; background: #fff; box-sizing: border-box; }
+					</style>
+

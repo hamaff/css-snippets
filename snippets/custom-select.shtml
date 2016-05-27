@@ -1,0 +1,94 @@
+						<div class="snippet">
+							<div class="snippet-head">
+								<h5>
+									<span class="snippet-title">custom select</span>
+									<small>&nbsp;</small>
+								</h5>
+							</div><!-- /.snippet-head -->
+
+							<div class="snippet-body">
+								<div class="snippet-cnt">
+									<h4>HTML Markup:</h4>
+<pre class="prettyprint html-css">
+<code class="lang-html">
+&lt;div class="select-wrapper"&gt;
+	&lt;select name="select" id="select"&gt;
+		&lt;option value="please-select"&gt;Please select&lt;/option&gt;
+		&lt;option value="option-one"&gt;Option one&lt;/option&gt;
+		&lt;option value="option-two"&gt;Option two&lt;/option&gt;
+		&lt;option value="option-three"&gt;Option three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/div&gt;&lt;!-- /.select-wrapper --&gt;
+</code>
+</pre>
+								</div><!-- /.snippet-cnt -->
+
+								<div class="snippet-cnt">
+									<h4>CSS Markup:</h4>
+
+									<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.select-wrapper { position: relative; width: 350px; height: 46px; border: 1px solid #d1d1d1; border-radius: 6px; background: #f6f6f6; font-size: 18px; line-height: 44px; box-shadow: 3px 3px 3px 0 rgba(0,0,0, .06) inset; box-sizing: border-box; -webkit-appearance: none; }
+.select-wrapper select { position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 46px; line-height: 46px; color: #626262; opacity: 0; -webkit-appearance: none; cursor: pointer; }
+.select-wrapper option { padding: 5px 10px; }
+.select-wrapper > p { overflow: hidden; position: relative; padding: 0 30px 0 20px !important; margin: 0 !important; font-size: inherit; line-height: inherit; color: #55595d; text-shadow: 0 1px #fff; text-overflow: ellipsis; white-space: nowrap; }
+.select-wrapper > p:after { position: absolute; top: 50%; right: 10px; content: ''; border-width: 8px 6px; border-style: solid; border-color: #55595d transparent transparent; margin-top: -4px; }
+</code>
+</pre>										
+									</div><!-- /.snippet-cnt-inner -->
+								</div><!-- /.snippet-cnt -->
+
+								<div class="snippet-cnt">
+									<h4>JavaScript Markup:</h4>
+<pre class="prettyprint lang-js">
+<code class="lang-js">
+var selectChange = function() {
+	$(this).closest('.select-wrapper').find('> p').text($(this).find('option:selected').val());
+}
+
+$('select')
+	.each(selectChange)
+	.on('change', selectChange);
+</code>
+</pre>
+								</div><!-- /.snippet-cnt -->							
+
+								<div class="snippet-cnt">
+									<h4>Result:</h4>
+
+									<div class="snippet-result">
+										<div class="select-wrapper">
+											<select name="select" id="select">
+												<option value="please-select">Please select</option>
+												<option value="option-one">Option one</option>
+												<option value="option-two">Option two</option>
+												<option value="option-three">Option three</option>
+											</select>
+											<p>&nbsp;</p>
+										</div><!-- /.select-wrapper -->
+									</div><!-- /.snippet-result -->
+								</div><!-- /.snippet-cnt -->
+							</div><!-- /.snippet-body -->
+						</div><!-- /.snippet -->
+
+						<style>
+							.select-wrapper { position: relative; width: 350px; height: 46px; border: 1px solid #d1d1d1; border-radius: 6px; background: #f6f6f6; font-size: 18px; line-height: 44px; box-shadow: 3px 3px 3px 0 rgba(0,0,0, .06) inset; box-sizing: border-box; -webkit-appearance: none; }
+							.select-wrapper select { position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 46px; line-height: 46px; color: #626262; opacity: 0; -webkit-appearance: none; cursor: pointer; }
+							.select-wrapper option { padding: 5px 10px; }
+							.select-wrapper > p { overflow: hidden; position: relative; padding: 0 30px 0 20px !important; margin: 0 !important; font-size: inherit; line-height: inherit; color: #55595d; text-shadow: 0 1px #fff; text-overflow: ellipsis; white-space: nowrap; }
+							.select-wrapper > p:after { position: absolute; top: 50%; right: 10px; content: ''; border-width: 8px 6px; border-style: solid; border-color: #55595d transparent transparent; margin-top: -4px; }
+						</style>
+
+						<script type="text/javascript">
+
+							var selectChange = function() {
+								$(this).closest('.select-wrapper').find('> p').text($(this).find('option:selected').val());
+							}
+
+							$('select')
+								.each(selectChange)
+								.on('change', selectChange);
+
+						</script>

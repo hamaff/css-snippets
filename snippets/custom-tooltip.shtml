@@ -1,0 +1,166 @@
+						<div class="snippet">
+							<div class="snippet-head">
+								<h5>
+									<span class="snippet-title">custom tooltip</span>
+									<small>&nbsp;</small>
+								</h5>
+							</div><!-- /.snippet-head -->
+
+							<div class="snippet-body">
+								<div class="snippet-simple">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;div&gt;
+	&lt;span&gt;Custom Tooltip&lt;/span&gt;
+	&lt;span class="tooltip"&gt;
+		&lt;i class="icon-tooltip"&gt;?&lt;/i&gt;
+		&lt;span class="tooltip-cnt"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.tooltip { position: relative; z-index: 2; display: inline-block; padding-left: 8px; }
+.icon-tooltip { position: relative; z-index: 4; display: block; width: 18px; height: 18px; border-radius: 50%; background: #55595d; font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 18px; color: #fff; text-align: center; font-style: normal; font-weight: 300; cursor: pointer; }
+.tooltip-cnt { position: absolute; top: 4px; left: 8px; right: 0; z-index: 3; width: 0; height: 0; padding: 0 12px; border-radius: 10px 0 0 0; border: 1px solid #c1c1c1; background: #e2e2e2; font-size: 0; line-height: 0; color: #55595d; opacity: 0; visibility: hidden; }
+
+.tooltip:hover .tooltip-cnt { top: -6px; left: 0; width: 80px; height: auto; padding: 33px 12px 10px; font-size: 12px; line-height: 1.2; opacity: 1; visibility: visible; }
+
+.tooltip-cnt { 
+	-webkit-transition: all .3s;
+       -moz-transition: all .3s;
+            -o-transition: all .3s;
+                transition: all .3s; 
+}
+</code>
+</pre>											
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div style="padding-top: 8px; font-family: 'Roboto Condensed', sans-serif;">
+												<span>Custom Tooltip</span>
+
+												<span class="tooltip">
+													<i class="icon-tooltip">?</i>
+													<span class="tooltip-cnt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.</span>
+												</span>
+											</div>
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+									
+									<style>
+										.tooltip { position: relative; z-index: 2; display: inline-block; padding-left: 8px; }
+										.icon-tooltip { position: relative; z-index: 4; display: block; width: 18px; height: 18px; border-radius: 50%; background: #55595d; font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 18px; color: #fff; text-align: center; font-style: normal; cursor: pointer; }
+										.tooltip-cnt { position: absolute; top: 4px; left: 8px; right: 0; z-index: 3; width: 0; height: 0; padding: 0 12px; border-radius: 10px 0 0 0; border: 1px solid #c1c1c1; background: #e2e2e2; font-size: 0; line-height: 0; color: #55595d; opacity: 0; visibility: hidden; }
+
+										.tooltip:hover .tooltip-cnt { top: -6px; left: 0; width: 80px; height: auto; padding: 33px 12px 10px; font-size: 12px; line-height: 1.2; opacity: 1; visibility: visible; }
+
+										.tooltip-cnt { 
+											-webkit-transition: all .3s;
+											   -moz-transition: all .3s;
+											     -o-transition: all .3s;
+											        transition: all .3s;
+										}
+									</style>
+								</div><!-- /.snippet-simple -->
+
+								<div class="snippet-advanced">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;strong data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat."&gt;adipisicing&lt;/strong&gt; elit. Reprehenderit aliquam accusamus sapiente fuga asperiores quibusdam consectetur natus perferendis quia odio sit unde eaque dolorum autem ipsa at officia eligendi.&lt;/p&gt;
+</code>
+</pre>
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+[data-tooltip] { position: relative; }
+ 
+[data-tooltip]:after,
+[data-tooltip]:before { position: absolute; top: 100%; left: 50%; z-index: 99; display: block; opacity: 0; visibility: hidden; pointer-events: none; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+[data-tooltip]:before { content: ''; border-width: 0 10px 10px; border-style: solid; border-color: transparent transparent rgba(0,0,0, .8); }
+[data-tooltip]:after { content: attr(data-tooltip); min-width: 150px; max-width: 300px; padding: 10px; margin-top: 10px; border-radius: 8px; background: rgba(0,0,0, .8); font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 1.2; color: #fff; font-weight: normal; }
+ 										 
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before { opacity: 1; visibility: visible; }
+
+[data-tooltip]:after,
+[data-tooltip]:before { 
+	-webkit-transition: opacity .3s 1s, visibility .3s 1s;
+       -moz-transition: opacity .3s 1s, visibility .3s 1s;
+            -o-transition: opacity .3s 1s, visibility .3s 1s;
+                transition: opacity .3s 1s, visibility .3s 1s;
+}
+
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before { 
+	-webkit-transition: opacity .3s .2s, visibility .3s .2s;
+       -moz-transition: opacity .3s .2s, visibility .3s .2s;
+            -o-transition: opacity .3s .2s, visibility .3s .2s;
+                transition: opacity .3s .2s, visibility .3s .2s;
+}
+</code>
+</pre>											
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<p>Lorem ipsum dolor sit amet, consectetur <strong data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.">adipisicing</strong> elit. Reprehenderit aliquam accusamus sapiente fuga asperiores quibusdam consectetur natus perferendis quia odio sit unde eaque dolorum autem ipsa at officia eligendi.</p>
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+									
+									<style>
+										[data-tooltip] { position: relative; z-index: 2; }
+										 
+										[data-tooltip]:after,
+										[data-tooltip]:before { position: absolute; top: 100%; left: 50%; z-index: 99; display: block; opacity: 0; visibility: hidden; pointer-events: none; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+										[data-tooltip]:before { content: ''; border-width: 0 10px 10px; border-style: solid; border-color: transparent transparent rgba(0,0,0, .8); }
+										[data-tooltip]:after { content: attr(data-tooltip); min-width: 150px; max-width: 300px; padding: 10px; margin-top: 10px; border-radius: 8px; background: rgba(0,0,0, .8); font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 1.2; color: #fff; font-weight: normal; }
+										 										 
+										[data-tooltip]:hover:after,
+										[data-tooltip]:hover:before { opacity: 1; visibility: visible; }
+
+										[data-tooltip]:after,
+										[data-tooltip]:before { 
+											-webkit-transition: opacity .3s 1s, visibility .3s 1s;
+											   -moz-transition: opacity .3s 1s, visibility .3s 1s;
+											     -o-transition: opacity .3s 1s, visibility .3s 1s;
+											        transition: opacity .3s 1s, visibility .3s 1s;
+										}
+
+										[data-tooltip]:hover:after,
+										[data-tooltip]:hover:before { 
+											-webkit-transition: opacity .3s .2s, visibility .3s .2s;
+											   -moz-transition: opacity .3s .2s, visibility .3s .2s;
+											     -o-transition: opacity .3s .2s, visibility .3s .2s;
+											        transition: opacity .3s .2s, visibility .3s .2s; 
+										}
+									</style>
+								</div><!-- /.snippet-advanced -->
+							</div><!-- /.snippet-body -->
+						</div><!-- /.snippet -->

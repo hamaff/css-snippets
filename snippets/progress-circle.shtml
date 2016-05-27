@@ -1,0 +1,132 @@
+						<div class="snippet">
+							<div class="snippet-head">
+								<h5>
+									<span class="snippet-title">circle progress bar</span>
+									<small>&nbsp;</small>
+								</h5>
+							</div><!-- /.snippet-head -->
+
+							<div class="snippet-body">
+								<div class="snippet-cnt">
+									<h4>HTML Markup:</h4>
+
+									<div class="snippet-cnt-inner">
+
+<pre class="prettyprint html-css">
+<code class="lang-html">
+&lt;div class="progress" data-name="Progress Bar" data-percent="70%"&gt;
+	&lt;svg viewBox="-10 -10 220 220"&gt;
+		&lt;g fill="none" stroke-width="10" transform="translate(100,100)"&gt;
+			&lt;path d="M 0,-100 A 100,100 0 0,1 86.6,-50" /&gt;
+			&lt;path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" /&gt;
+			&lt;path d="M 86.6,50 A 100,100 0 0,1 0,100" /&gt;
+			&lt;path d="M 0,100 A 100,100 0 0,1 -86.6,50" /&gt;
+			&lt;path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" /&gt;
+			&lt;path d="M -86.6,-50 A 100,100 0 0,1 0,-100" /&gt;
+		&lt;/g&gt;
+	&lt;/svg&gt; 
+
+	&lt;svg viewBox="-10 -10 220 220"&gt;
+		&lt;path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="410"&gt;&lt;/path&gt;
+	&lt;/svg&gt; 
+&lt;/div&gt;&lt;!-- /.progress --&gt;
+
+Note: 1% = 6.3 (stroke-dashoffset=" ... ")
+</code>
+</pre>								</div><!-- /.snippet-cnt-inner -->
+								</div><!-- /.snippet-cnt -->
+
+								<div class="snippet-cnt">
+									<h4>CSS Markup:</h4>
+
+									<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.progress:before,
+.progress:after { position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+.progress:after { content: attr(data-percent); z-index: 2; width: 100%; font-size: 34px; line-height: .76; color: #54585d; font-weight: 300; text-align: center; }
+.progress:before { right: 0; content: ''; z-index: 1; width: calc(100% - 30px); height: calc(100% - 30px); border-radius: 50%; margin: 0 auto; background: #fff; }
+.progress { overflow: hidden; position: relative; display: inline-block; width: 184px; height: 184px; border-radius: 50%; background: #01d1d5; color: #54585d; text-align: center; }
+
+.progress svg { width: 184px; height: 184px; }
+.progress svg:nth-child(2) { position: absolute; left: 0; top: 0; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+.progress svg:nth-child(2) path { fill: none; stroke-width: 25; stroke-dasharray: 630; stroke: #54585d; }
+
+.progress svg:nth-child(2) path {
+	-webkit-transition: progress .3s;
+       -moz-transition: progress .3s;
+            -o-transition: progress .3s;
+                transition: progress .3s; 
+}
+
+@-webkit-keyframes progress { 
+    0% { stroke-dashoffset: 0 }
+}
+@-moz-keyframes progress { 
+    0% { stroke-dashoffset: 0 }
+}
+@keyframes progress { 
+    0% { stroke-dashoffset: 0 }
+}
+</code>
+</pre>
+									</div><!-- /.snippet-cnt-inner -->
+								</div><!-- /.snippet-cnt -->
+
+							
+
+								<div class="snippet-cnt">
+									<h4>Result:</h4>
+
+									<div class="snippet-result">
+										<div class="progress" data-name="Progress Bar" data-percent="70%">
+											<svg viewBox="-10 -10 220 220">
+												<g fill="none" stroke-width="10" transform="translate(100,100)">
+													<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" />
+													<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" />
+													<path d="M 86.6,50 A 100,100 0 0,1 0,100" />
+													<path d="M 0,100 A 100,100 0 0,1 -86.6,50" />
+													<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" />
+													<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" />
+												</g>
+											</svg> 
+
+											<svg viewBox="-10 -10 220 220">
+												<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="410"></path>
+											</svg> 
+										</div><!-- /.progress -->
+									</div><!-- /.snippet-result -->
+								</div><!-- /.snippet-cnt -->
+							</div><!-- /.snippet-body -->
+						</div><!-- /.snippet -->
+
+						<style>
+							.progress:before,
+							.progress:after { position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+							.progress:after { content: attr(data-percent); z-index: 2; width: 100%; font-size: 34px; line-height: .76; color: #54585d; font-weight: 300; text-align: center; }
+							.progress:before { right: 0; content: ''; z-index: 1; width: calc(100% - 30px); height: calc(100% - 30px); border-radius: 50%; margin: 0 auto; background: #fff; }
+							.progress { overflow: hidden; position: relative; display: inline-block; width: 184px; height: 184px; border-radius: 50%; background: #01d1d5; color: #54585d; text-align: center; }
+
+							.progress svg { width: 184px; height: 184px; }
+							.progress svg:nth-child(2) { position: absolute; left: 0; top: 0; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+							.progress svg:nth-child(2) path { fill: none; stroke-width: 25; stroke-dasharray: 630; stroke: #54585d; }
+
+							.progress svg:nth-child(2) path {
+							  -webkit-animation: progress 3s;
+							     -moz-animation: progress 3s;
+							       -o-animation: progress 3s;
+							          animation: progress 3s;
+							}
+
+							@-webkit-keyframes progress { 
+							    0% { stroke-dashoffset: 0 }
+							}
+
+							@-moz-keyframes progress { 
+							    0% { stroke-dashoffset: 0 }
+							}
+
+							@keyframes progress { 
+							    0% { stroke-dashoffset: 0 }
+							}
+						</style>

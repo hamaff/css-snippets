@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>home</title>
+	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/prism.css" media="all" />
+	<link rel="stylesheet" href="css/style.css" media="all" />
+</head>
+<body>
+<div class="wrapper">
+	<div class="wrapper-inner">
+		<header class="header">
+			<div class="shell">
+				<h1>Coding Standards</h1>
+			</div><!-- /.shell -->
+		</header><!-- /.header -->
+
+		<div class="main">
+			<div class="shell">
+				<div class="content">
+
+					<section class="section">
+						<header class="section-head">
+							<h2>CSS3 Snippets</h2>
+						</header><!-- /.section-head -->
+
+						<div class="section-body">
+
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">string truncate</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+<pre class="prettyprint html-css">
+<code class="lang-html">
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, similique aspernatur. Similique blanditiis expedita quae.&lt;/p&gt;
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+p { overflow: hidden; width: 350px; text-overflow: ellipsis; white-space: nowrap; }
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+								
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+										<div class="snippet-result">
+											<p style="overflow: hidden; width: 350px; text-overflow: ellipsis; white-space: nowrap;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, similique aspernatur. Similique blanditiis expedita quae.</p>
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+								</div><!-- /.snippet-body -->
+							</div><!-- /.snippet -->
+							
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">custom tooltip</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-simple">
+										<div class="snippet-cnt">
+											<h4>HTML Markup:</h4>
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;div&gt;
+	&lt;span&gt;Custom Tooltip&lt;/span&gt;
+	&lt;span class="tooltip"&gt;
+		&lt;i class="icon-tooltip"&gt;?&lt;/i&gt;
+		&lt;span class="tooltip-cnt"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.&lt;/span&gt;
+	&lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.tooltip { position: relative; z-index: 2; display: inline-block; padding-left: 8px; }
+.icon-tooltip { position: relative; z-index: 4; display: block; width: 18px; height: 18px; border-radius: 50%; background: #55595d; font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 18px; color: #fff; text-align: center; font-style: normal; font-weight: 300; cursor: pointer; }
+.tooltip-cnt { position: absolute; top: 4px; left: 8px; right: 0; z-index: 3; width: 0; height: 0; padding: 0 12px; border-radius: 10px 0 0 0; border: 1px solid #c1c1c1; background: #e2e2e2; font-size: 0; line-height: 0; color: #55595d; opacity: 0; visibility: hidden; }
+
+.tooltip:hover .tooltip-cnt { top: -6px; left: 0; width: 80px; height: auto; padding: 33px 12px 10px; font-size: 12px; line-height: 1.2; opacity: 1; visibility: visible; }
+
+.tooltip-cnt { 
+	-webkit-transition: all .3s;
+       -moz-transition: all .3s;
+            -o-transition: all .3s;
+                transition: all .3s; 
+}
+</code>
+</pre>											
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+
+											<div class="snippet-result">
+												<div style="padding-top: 8px; font-family: 'Roboto Condensed', sans-serif;">
+													<span>Custom Tooltip</span>
+
+													<span class="tooltip">
+														<i class="icon-tooltip">?</i>
+														<span class="tooltip-cnt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.</span>
+													</span>
+												</div>
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+										
+										<style>
+											.tooltip { position: relative; z-index: 2; display: inline-block; padding-left: 8px; }
+											.icon-tooltip { position: relative; z-index: 4; display: block; width: 18px; height: 18px; border-radius: 50%; background: #55595d; font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 18px; color: #fff; text-align: center; font-style: normal; cursor: pointer; }
+											.tooltip-cnt { position: absolute; top: 4px; left: 8px; right: 0; z-index: 3; width: 0; height: 0; padding: 0 12px; border-radius: 10px 0 0 0; border: 1px solid #c1c1c1; background: #e2e2e2; font-size: 0; line-height: 0; color: #55595d; opacity: 0; visibility: hidden; }
+
+											.tooltip:hover .tooltip-cnt { top: -6px; left: 0; width: 80px; height: auto; padding: 33px 12px 10px; font-size: 12px; line-height: 1.2; opacity: 1; visibility: visible; }
+
+											.tooltip-cnt { 
+												-webkit-transition: all .3s;
+												   -moz-transition: all .3s;
+												     -o-transition: all .3s;
+												        transition: all .3s;
+											}
+										</style>
+									</div><!-- /.snippet-simple -->
+
+									<div class="snippet-advanced">
+										<div class="snippet-cnt">
+											<h4>HTML Markup:</h4>
+
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;strong data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat."&gt;adipisicing&lt;/strong&gt; elit. Reprehenderit aliquam accusamus sapiente fuga asperiores quibusdam consectetur natus perferendis quia odio sit unde eaque dolorum autem ipsa at officia eligendi.&lt;/p&gt;
+</code>
+</pre>
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+[data-tooltip] { position: relative; }
+ 
+[data-tooltip]:after,
+[data-tooltip]:before { position: absolute; top: 100%; left: 50%; z-index: 99; display: block; opacity: 0; visibility: hidden; pointer-events: none; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+[data-tooltip]:before { content: ''; border-width: 0 10px 10px; border-style: solid; border-color: transparent transparent rgba(0,0,0, .8); }
+[data-tooltip]:after { content: attr(data-tooltip); min-width: 150px; max-width: 300px; padding: 10px; margin-top: 10px; border-radius: 8px; background: rgba(0,0,0, .8); font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 1.2; color: #fff; font-weight: normal; }
+ 										 
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before { opacity: 1; visibility: visible; }
+
+[data-tooltip]:after,
+[data-tooltip]:before { 
+	-webkit-transition: opacity .3s 1s, visibility .3s 1s;
+       -moz-transition: opacity .3s 1s, visibility .3s 1s;
+            -o-transition: opacity .3s 1s, visibility .3s 1s;
+                transition: opacity .3s 1s, visibility .3s 1s;
+}
+
+[data-tooltip]:hover:after,
+[data-tooltip]:hover:before { 
+	-webkit-transition: opacity .3s .2s, visibility .3s .2s;
+       -moz-transition: opacity .3s .2s, visibility .3s .2s;
+            -o-transition: opacity .3s .2s, visibility .3s .2s;
+                transition: opacity .3s .2s, visibility .3s .2s;
+}
+</code>
+</pre>											
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+
+											<div class="snippet-result">
+												<p>Lorem ipsum dolor sit amet, consectetur <strong data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec orci erat.">adipisicing</strong> elit. Reprehenderit aliquam accusamus sapiente fuga asperiores quibusdam consectetur natus perferendis quia odio sit unde eaque dolorum autem ipsa at officia eligendi.</p>
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+										
+										<style>
+											[data-tooltip] { position: relative; z-index: 2; }
+											 
+											[data-tooltip]:after,
+											[data-tooltip]:before { position: absolute; top: 100%; left: 50%; z-index: 99; display: block; opacity: 0; visibility: hidden; pointer-events: none; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+											[data-tooltip]:before { content: ''; border-width: 0 10px 10px; border-style: solid; border-color: transparent transparent rgba(0,0,0, .8); }
+											[data-tooltip]:after { content: attr(data-tooltip); min-width: 150px; max-width: 300px; padding: 10px; margin-top: 10px; border-radius: 8px; background: rgba(0,0,0, .8); font-family: 'Roboto', sans-serif; font-size: 14px; line-height: 1.2; color: #fff; font-weight: normal; }
+											 										 
+											[data-tooltip]:hover:after,
+											[data-tooltip]:hover:before { opacity: 1; visibility: visible; }
+
+											[data-tooltip]:after,
+											[data-tooltip]:before { 
+												-webkit-transition: opacity .3s 1s, visibility .3s 1s;
+												   -moz-transition: opacity .3s 1s, visibility .3s 1s;
+												     -o-transition: opacity .3s 1s, visibility .3s 1s;
+												        transition: opacity .3s 1s, visibility .3s 1s;
+											}
+
+											[data-tooltip]:hover:after,
+											[data-tooltip]:hover:before { 
+												-webkit-transition: opacity .3s .2s, visibility .3s .2s;
+												   -moz-transition: opacity .3s .2s, visibility .3s .2s;
+												     -o-transition: opacity .3s .2s, visibility .3s .2s;
+												        transition: opacity .3s .2s, visibility .3s .2s; 
+											}
+										</style>
+									</div><!-- /.snippet-advanced -->
+								</div><!-- /.snippet-body -->
+							</div><!-- /.snippet -->
+
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">custom select</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+<pre class="prettyprint html-css">
+<code class="lang-html">
+&lt;div class="select-wrapper"&gt;
+	&lt;select name="select" id="select"&gt;
+		&lt;option value="please-select"&gt;Please select&lt;/option&gt;
+		&lt;option value="option-one"&gt;Option one&lt;/option&gt;
+		&lt;option value="option-two"&gt;Option two&lt;/option&gt;
+		&lt;option value="option-three"&gt;Option three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/div&gt;&lt;!-- /.select-wrapper --&gt;
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.select-wrapper { position: relative; width: 350px; height: 46px; border: 1px solid #d1d1d1; border-radius: 6px; background: #f6f6f6; font-size: 18px; line-height: 44px; box-shadow: 3px 3px 3px 0 rgba(0,0,0, .06) inset; box-sizing: border-box; -webkit-appearance: none; }
+.select-wrapper select { position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 46px; line-height: 46px; color: #626262; opacity: 0; -webkit-appearance: none; cursor: pointer; }
+.select-wrapper option { padding: 5px 10px; }
+.select-wrapper > p { overflow: hidden; position: relative; padding: 0 30px 0 20px !important; margin: 0 !important; font-size: inherit; line-height: inherit; color: #55595d; text-shadow: 0 1px #fff; text-overflow: ellipsis; white-space: nowrap; }
+.select-wrapper > p:after { position: absolute; top: 50%; right: 10px; content: ''; border-width: 8px 6px; border-style: solid; border-color: #55595d transparent transparent; margin-top: -4px; }
+</code>
+</pre>										
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>JavaScript Markup:</h4>
+<pre class="prettyprint lang-js">
+<code class="lang-js">
+var selectChange = function() {
+	$(this).closest('.select-wrapper').find('> p').text($(this).find('option:selected').val());
+}
+
+$('select')
+	.each(selectChange)
+	.on('change', selectChange);
+</code>
+</pre>
+									</div><!-- /.snippet-cnt -->							
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="select-wrapper">
+												<select name="select" id="select">
+													<option value="please-select">Please select</option>
+													<option value="option-one">Option one</option>
+													<option value="option-two">Option two</option>
+													<option value="option-three">Option three</option>
+												</select>
+												<p>&nbsp;</p>
+											</div><!-- /.select-wrapper -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+								</div><!-- /.snippet-body -->
+
+								<style>
+									.select-wrapper { position: relative; width: 350px; height: 46px; border: 1px solid #d1d1d1; border-radius: 6px; background: #f6f6f6; font-size: 18px; line-height: 44px; box-shadow: 3px 3px 3px 0 rgba(0,0,0, .06) inset; box-sizing: border-box; -webkit-appearance: none; }
+									.select-wrapper select { position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 46px; line-height: 46px; color: #626262; opacity: 0; -webkit-appearance: none; cursor: pointer; }
+									.select-wrapper option { padding: 5px 10px; }
+									.select-wrapper > p { overflow: hidden; position: relative; padding: 0 30px 0 20px !important; margin: 0 !important; font-size: inherit; line-height: inherit; color: #55595d; text-shadow: 0 1px #fff; text-overflow: ellipsis; white-space: nowrap; }
+									.select-wrapper > p:after { position: absolute; top: 50%; right: 10px; content: ''; border-width: 8px 6px; border-style: solid; border-color: #55595d transparent transparent; margin-top: -4px; }
+								</style>
+
+								<script type="text/javascript">
+
+									var selectChange = function() {
+										$(this).closest('.select-wrapper').find('> p').text($(this).find('option:selected').val());
+									}
+
+									$('select')
+										.each(selectChange)
+										.on('change', selectChange);
+
+								</script>
+							</div><!-- /.snippet -->
+							
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">custom checkbox</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-simple">
+										<div class="snippet-cnt">
+											<h4>HTML Markup:</h4>
+<pre class="prettyprint lang-html">
+<code class="lang-html">
+&lt;div class="checkbox-wrapper"&gt;
+	&lt;input type="checkbox" name="checkboxs" id="checkbox" /&gt;
+
+	&lt;label for="checkbox"&gt;
+		&lt;span class="checkbox"&gt;&amp;nbsp;&lt;/span&gt;
+		&lt;span class="label"&gt;Checkbox Label&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;&lt;!-- /.checkbox-wrapper --&gt;
+</code>
+</pre>
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { margin-top: 10px; font-size: 0; line-height: 0; }
+.checkbox-wrapper input[type="checkbox"]{ display: none; }
+.checkbox-wrapper label { position: relative; z-index: 2; display: block; cursor: pointer; }
+.checkbox-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+.checkbox { position: relative; width: 19px; height: 19px; border: 2px solid #55595d; margin-right: 10px; background: #fff; box-sizing: border-box; }
+
+.checkbox:before,
+.checkbox:after { position: absolute; content: ''; width: 3px; background: #f37230; opacity: 0; }
+.checkbox:before { top: 6px; left: 3px; height: 6px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+.checkbox:after { top: 2px; left: 7px; height: 10px; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:before,
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:after { opacity: 1; }
+
+.checkbox:before,
+.checkbox:after {
+	-webkit-transition: opacity .3s;
+       -moz-transition: opacity .3s;
+            -o-transition: opacity .3s;
+                transition: opacity .3s; 
+}
+</code>
+</pre>											
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+								
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+											<div class="snippet-result">
+												<div class="checkbox-wrapper checkbox-inline">
+													<input type="checkbox" name="checkboxs" id="checkbox1" checked />
+												
+													<label for="checkbox1">
+														<span class="checkbox">&nbsp;</span>
+														<span class="label">Checkbox Checked</span>
+													</label>
+												</div><!-- /.checkbox-wrapper -->
+												
+												<div class="checkbox-wrapper checkbox-inline">
+													<input type="checkbox" name="checkboxs" id="checkbox2" />
+												
+													<label for="checkbox2">
+														<span class="checkbox">&nbsp;</span>
+														<span class="label">Checkbox Unchecked</span>
+													</label>
+												</div><!-- /.checkbox-wrapper -->
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+
+										<style>
+											.snippet-simple .checkbox-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+											.snippet-simple .checkbox { margin-right: 10px; }
+
+											.snippet-simple .checkbox:before,
+											.snippet-simple .checkbox:after { position: absolute; content: ''; width: 3px; background: #f37230; opacity: 0; }
+											.snippet-simple .checkbox:before { top: 6px; left: 3px; height: 6px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+											.snippet-simple .checkbox:after { top: 2px; left: 7px; height: 10px; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+											.snippet-simple .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:before,
+											.snippet-simple .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox:after { opacity: 1; }
+
+											.snippet-simple .checkbox:before,
+											.snippet-simple .checkbox:after {
+												-webkit-transition: opacity .3s;
+												   -moz-transition: opacity .3s;
+												     -o-transition: opacity .3s;
+												        transition: opacity .3s; 
+											}
+										</style>
+									
+									</div><!-- /.snippet-simple -->
+
+									<div class="snippet-advanced">
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+											
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { font-size: 0; line-height: 0; }
+.checkbox-wrapper input[type="checkbox"]{ display: none; }
+.checkbox-wrapper label { overflow: hidden; position: relative; z-index: 2; display: block; width: 50px; border: 1px solid #ccc; border-radius: 20px; background: #fff; cursor: pointer; }
+.checkbox { position: relative; z-index: 2; display: block; width: 24px; height: 24px; border: 2px solid #55595d; border-radius: 50%; background: #fff; box-sizing: border-box; -webkit-transform: translateX(0px); transform: translateX(0px); }
+
+.label { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; display: block; font-size: 12px; line-height: 17px; }
+.label:before,
+.label:after { position: absolute; top: 3px; bottom: 3px; width: 90%; }
+.label-text:before { left: 14%; content: 'on'; color: #fff; }
+.label-text:after { right: 14%; content: 'off'; text-align: right; }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label .checkbox { -webkit-transform: translateX(26px); transform: translateX(26px); }
+.checkbox-wrapper input[type="checkbox"]:checked + label .label { background: #55595d; }
+
+.checkbox {
+	-webkit-transition: -webkit-transform .3s;
+       -moz-transition:     -moz-transform .3s;
+            -o-transition:          -o-transform .3s;
+                transition: 		       transform .3s; 
+}
+
+.label {
+	-webkit-transition: background .3s;
+       -moz-transition: background .3s;
+            -o-transition: background .3s;
+                transition: background .3s; 
+}
+
+</code>
+</pre>
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+
+											<div class="snippet-result">
+												<div class="checkbox-wrapper checkbox-inline">
+													<input type="checkbox" name="checkbox" id="checkbox8" checked />
+												
+													<label for="checkbox8">
+														<span class="checkbox"></span>
+														<span class="label label-text">&nbsp;</span>
+													</label>
+												</div><!-- /.checkbox-wrapper -->
+												
+												<div class="checkbox-wrapper checkbox-inline ">
+													<input type="checkbox" name="checkbox" id="checkbox9" />
+												
+													<label for="checkbox9">
+														<span class="checkbox"></span>
+														<span class="label label-icons">&nbsp;</span>
+													</label>
+												</div><!-- /.checkbox-wrapper -->
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+
+										<style>
+											.snippet-advanced .checkbox-wrapper label { overflow: hidden; width: 50px; border: 1px solid #ccc; border-radius: 20px; background: #fff; }
+
+											.snippet-advanced .checkbox { position: relative; z-index: 2; display: block; width: 24px; height: 24px; border: 2px solid #55595d; border-radius: 50%; background: #fff; box-sizing: border-box; -webkit-transform: translateX(0px); transform: translateX(0px); }
+											.snippet-advanced .label { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; display: block; font-size: 12px; line-height: 17px; }
+
+											.snippet-advanced .label:before,
+											.snippet-advanced .label:after { position: absolute; top: 3px; bottom: 3px; width: 90%; }
+											.snippet-advanced .label:before { left: 14%; color: #fff; }
+											.snippet-advanced .label:after { right: 14%; text-align: right; }
+
+											.snippet-advanced .label-text:before { content: 'on'; }
+											.snippet-advanced .label-text:after { content: 'off'; }
+
+											.snippet-advanced .label-icons:before { content: '\2714'; font-size: 16px; }
+											.snippet-advanced .label-icons:after { content: '\2718';  font-size: 16px; }
+
+											.snippet-advanced .checkbox-wrapper input[type="checkbox"]:checked + label .checkbox { -webkit-transform: translateX(26px); transform: translateX(26px); }
+											.snippet-advanced .checkbox-wrapper input[type="checkbox"]:checked + label .label { background: #55595d; }
+
+											.snippet-advanced .checkbox {
+												-webkit-transition: -webkit-transform .3s;
+												   -moz-transition:    -moz-transform .3s;
+												     -o-transition: 	 -o-transform .3s;
+												        transition: 		transform .3s; 
+											}
+
+											.snippet-advanced .label {
+												-webkit-transition: background .3s;
+												   -moz-transition: background .3s;
+												     -o-transition: background .3s;
+												        transition: background .3s; 
+											}
+										</style>
+									</div><!-- /.snippet-advanced -->
+
+									<div class="snippet-master">
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+											
+											<div class="snippet-cnt-inner">
+<pre class="prettyprint lang-css">
+<code class="lang-css">
+.checkbox-wrapper { overflow: hidden; position: relative; display: inline-block; min-width: 100px; height: 28px; border: 1px solid rgba(0, 0, 0, 0.1); font-size: 0; line-height: 0; text-align: left; vertical-align: middle; }
+.checkbox-wrapper input[type="checkbox"] { display: none; }
+
+.checkbox-wrapper label { position: absolute; top: 0; left: 0; bottom: 0; display: inline-block; width: 149%; cursor: pointer; -webkit-transform: translateX(-33%); transform: translateX(-33%); }
+.checkbox-wrapper label:before,
+.checkbox-wrapper label:after { position: absolute; top: 0; bottom: 0; width: 33%; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-family:'FontAwesome'; font-size: 14px; line-height: 26px; text-align: center; }
+.checkbox-wrapper label:before { left: 0; content: '\2714'; background: #55595d; color: #fff; }
+.checkbox-wrapper label:after { right: 0; content: '\2718'; background: #f9f9f9; color: #555; }
+
+.checkbox-wrapper input[type="checkbox"]:checked + label { -webkit-transform: translateX(0%); transform: translateX(0%); }
+
+.checkbox-wrapper label {
+	-webkit-transition: -webkit-transform .5s;
+       -moz-transition:     -moz-transform .5s;
+            -o-transition:          -o-transform .5s;
+                transition: 		       transform .5s; 
+}
+
+</code>
+</pre>
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+
+											<div class="snippet-result">
+												<div class="checkbox-wrapper">
+													<input type="checkbox" name="checkbox" id="master-checkbox" />
+													<label for="master-checkbox"></label>
+												</div><!-- /.checkbox-wrapper -->
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+
+										<style>
+											.snippet-master .checkbox-wrapper { overflow: hidden; position: relative; display: inline-block; min-width: 100px; height: 28px; border: 1px solid rgba(0, 0, 0, 0.1); font-size: 0; line-height: 0; text-align: left; vertical-align: middle; }
+											.snippet-master .checkbox-wrapper input[type="checkbox"] { display: none; }
+											.snippet-master .checkbox-wrapper input[type="checkbox"]:checked + label { -webkit-transform: translateX(0%); transform: translateX(0%); }
+
+											.snippet-master .checkbox-wrapper label { position: absolute; top: 0; left: 0; bottom: 0; display: inline-block; width: 149%; cursor: pointer; -webkit-transform: translateX(-33%); transform: translateX(-33%); }
+											.snippet-master .checkbox-wrapper label:before,
+											.snippet-master .checkbox-wrapper label:after { position: absolute; top: 0; bottom: 0; width: 33%; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-family:'FontAwesome'; font-size: 14px; line-height: 26px; text-align: center; }
+
+											.snippet-master .checkbox-wrapper label:before { left: 0; content: '\2714'; background: #55595d; color: #fff; }
+											.snippet-master .checkbox-wrapper label:after { right: 0; content: '\2718'; background: #f9f9f9; color: #555; }
+
+											.snippet-master label {
+												-webkit-transition: -webkit-transform .3s;
+												   -moz-transition:    -moz-transform .3s;
+												     -o-transition: 	 -o-transform .3s;
+												        transition: 		transform .3s; 
+											}
+										</style>
+									</div><!-- /.snippet-master -->
+								</div><!-- /.snippet-body -->
+
+								<style>
+									.checkbox-inline { display: inline-block; }
+									.checkbox-inline ~ .checkbox-inline { margin-left: 20px; }
+
+									.checkbox-wrapper { margin-top: 10px; font-size: 0; line-height: 0; }
+									.checkbox-wrapper input[type="checkbox"]{ display: none; }
+									.checkbox-wrapper label { position: relative; z-index: 2; display: block; cursor: pointer; }
+									.checkbox { position: relative; width: 19px; height: 19px; border: 2px solid #55595d; background: #fff; box-sizing: border-box; }
+								</style>
+							</div><!-- /.snippet -->												
+							
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">custom radio button</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-simple">
+										<div class="snippet-cnt">
+											<h4>HTML Markup:</h4>
+	<pre class="prettyprint lang-html">
+	<code class="lang-html">
+	&lt;div class="radio-wrapper"&gt;
+		&lt;input type="radio" name="radios" id="radio" /&gt;
+
+		&lt;label for="radio"&gt;
+			&lt;span class="radio"&gt;&amp;nbsp;&lt;/span&gt;
+			&lt;span class="label"&gt;Radio Label&lt;/span&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;&lt;!-- /.radio-wrapper --&gt;
+	</code>
+	</pre>
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+
+											<div class="snippet-cnt-inner">
+	<pre class="prettyprint lang-css">
+	<code class="lang-css">
+	.radio-wrapper { font-size: 0; line-height: 0; }
+	.radio-wrapper input[type="radio"] { display: none; }
+	.radio-wrapper label { display: block; cursor: pointer; }
+	.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+	.radio { position: relative; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #55595d; margin-right: 15px; background: #fff; }
+	.radio:after { position: absolute; top: 4px; left: 4px; content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: #f37230; -webkit-transform: scale(0); transform: scale(0); }
+	.radio-wrapper input[type="radio"]:checked + label .radio:after { -webkit-transform: scale(1); transform: scale(1); }
+
+	.radio:after {
+		-webkit-transition: -webkit-transform .3s;
+	       -moz-transition:     -moz-transform .3s;
+	            -o-transition:          -o-transform .3s;
+	                transition: 		       transform .3s; 
+	}
+	</code>
+	</pre>											
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+								
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+											<div class="snippet-result">
+												<div class="radio-wrapper radio-inline">
+													<input type="radio" name="radios" id="radio1" checked />
+												
+													<label for="radio1">
+														<span class="radio">&nbsp;</span>
+														<span class="label">Radio Checked</span>
+													</label>
+												</div><!-- /.radio-wrapper -->
+												
+												<div class="radio-wrapper radio-inline">
+													<input type="radio" name="radios" id="radio2" />
+												
+													<label for="radio2">
+														<span class="radio">&nbsp;</span>
+														<span class="label">Radio Unchecked</span>
+													</label>
+												</div><!-- /.radio-wrapper -->
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+
+										<style>
+											.snippet-simple .radio { position: relative; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #55595d; margin-right: 15px; background: #fff; }
+											.snippet-simple .radio:after { position: absolute; top: 4px; left: 4px; content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: #f37230; -webkit-transform: scale(0); transform: scale(0); }
+
+											.snippet-simple .radio-wrapper input[type="radio"]:checked + label .radio:after { -webkit-transform: scale(1); transform: scale(1); }
+
+											.snippet-simple .radio:after {
+												-webkit-transition: -webkit-transform .3s;
+												   -moz-transition:    -moz-transform .3s;
+												     -o-transition: 	 -o-transform .3s;
+												        transition: 		transform .3s; 
+											}
+										</style>
+									
+									</div><!-- /.snippet-simple -->
+
+									<div class="snippet-advanced">
+										<div class="snippet-cnt">
+											<h4>CSS Markup:</h4>
+											
+											<div class="snippet-cnt-inner">
+	<pre class="prettyprint lang-css">
+	<code class="lang-css">
+	.radio-wrapper { font-size: 0; line-height: 0; }
+	.radio-wrapper input[type="radio"] { display: none; }
+	.radio-wrapper label { display: block; width: 50px; border-radius: 20px; background: #55595d; cursor: pointer; }
+	.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+	.radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #55595d; background: #fff; -webkit-transform: translateX(0%); transform: translateX(0%); }
+	.radio-wrapper input[type="radio"]:checked + label .radio { background: #f37230; -webkit-transform: translateX(26px); transform: translateX(26px); }
+
+	.radio:after {
+		-webkit-transition: -webkit-transform .3s, background .3s;
+	       -moz-transition:     -moz-transform .3s, background .3s;
+	            -o-transition:          -o-transform .3s, background .3s;
+	                transition: 		       transform .3s, background .3s; 
+	}
+	</code>
+	</pre>
+											</div><!-- /.snippet-cnt-inner -->
+										</div><!-- /.snippet-cnt -->
+
+										<div class="snippet-cnt">
+											<h4>Result:</h4>
+
+											<div class="snippet-result">
+												<div class="radio-wrapper radio-inline">
+													<input type="radio" name="radio" id="radio8" />
+												
+													<label for="radio8">
+														<span class="radio">&nbsp;</span>
+													</label>
+												</div><!-- /.radio-wrapper -->
+
+												<div class="radio-wrapper radio-inline">
+													<input type="radio" name="radio" id="radio9" />
+												
+													<label for="radio9">
+														<span class="radio">&nbsp;</span>
+													</label>
+												</div><!-- /.radio-wrapper -->
+											</div><!-- /.snippet-result -->
+										</div><!-- /.snippet-cnt -->
+
+										<style>
+											.snippet-advanced .radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #55595d; background: #fff; -webkit-transform: translateX(0%); transform: translateX(0%); }
+											.snippet-advanced .radio-wrapper label { position: relative; width: 50px; border-radius: 20px; background: #55595d; }
+
+											.snippet-advanced .radio-wrapper input[type="radio"]:checked + label .radio { background: #f37230; -webkit-transform: translateX(26px); transform: translateX(26px); }
+											
+											.snippet-advanced .radio {
+												-webkit-transition: -webkit-transform .3s, background .3s;
+												   -moz-transition:    -moz-transform .3s, background .3s;
+												     -o-transition: 	 -o-transform .3s, background .3s;
+												        transition: 		transform .3s, background .3s; 
+											}
+										</style>
+									</div><!-- /.snippet-advanced -->
+								</div><!-- /.snippet-body -->
+
+								<style>
+									.radio-wrapper input[type="radio"] { display: none; }
+									.radio-wrapper span { display: inline-block; font-size: 14px; line-height: 1.2; vertical-align: middle; }
+									.snippet-result { min-height: 36px; padding: 20px; }
+									.radio-inline { display: inline-block; }
+									.radio-inline ~ .radio-inline { margin-left: 20px; }
+									.radio-wrapper { position: relative; z-index: 9; font-size: 0; line-height: 0; }
+									.radio-wrapper label { display: block; cursor: pointer; }
+								</style>
+							</div><!-- /.snippet -->																			
+
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">circle progress bar</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+
+	<pre class="prettyprint html-css">
+	<code class="lang-html">
+	&lt;div class="progress" data-name="Progress Bar" data-percent="70%"&gt;
+		&lt;svg viewBox="-10 -10 220 220"&gt;
+			&lt;g fill="none" stroke-width="10" transform="translate(100,100)"&gt;
+				&lt;path d="M 0,-100 A 100,100 0 0,1 86.6,-50" /&gt;
+				&lt;path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" /&gt;
+				&lt;path d="M 86.6,50 A 100,100 0 0,1 0,100" /&gt;
+				&lt;path d="M 0,100 A 100,100 0 0,1 -86.6,50" /&gt;
+				&lt;path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" /&gt;
+				&lt;path d="M -86.6,-50 A 100,100 0 0,1 0,-100" /&gt;
+			&lt;/g&gt;
+		&lt;/svg&gt; 
+
+		&lt;svg viewBox="-10 -10 220 220"&gt;
+			&lt;path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="410"&gt;&lt;/path&gt;
+		&lt;/svg&gt; 
+	&lt;/div&gt;&lt;!-- /.progress --&gt;
+
+	Note: 1% = 6.3 (stroke-dashoffset=" ... ")
+	</code>
+	</pre>								</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+	<pre class="prettyprint lang-css">
+	<code class="lang-css">
+	.progress:before,
+	.progress:after { position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+	.progress:after { content: attr(data-percent); z-index: 2; width: 100%; font-size: 34px; line-height: .76; color: #54585d; font-weight: 300; text-align: center; }
+	.progress:before { right: 0; content: ''; z-index: 1; width: calc(100% - 30px); height: calc(100% - 30px); border-radius: 50%; margin: 0 auto; background: #fff; }
+	.progress { overflow: hidden; position: relative; display: inline-block; width: 184px; height: 184px; border-radius: 50%; background: #01d1d5; color: #54585d; text-align: center; }
+
+	.progress svg { width: 184px; height: 184px; }
+	.progress svg:nth-child(2) { position: absolute; left: 0; top: 0; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+	.progress svg:nth-child(2) path { fill: none; stroke-width: 25; stroke-dasharray: 630; stroke: #54585d; }
+
+	.progress svg:nth-child(2) path {
+		-webkit-transition: progress .3s;
+	       -moz-transition: progress .3s;
+	            -o-transition: progress .3s;
+	                transition: progress .3s; 
+	}
+
+	@-webkit-keyframes progress { 
+	    0% { stroke-dashoffset: 0 }
+	}
+	@-moz-keyframes progress { 
+	    0% { stroke-dashoffset: 0 }
+	}
+	@keyframes progress { 
+	    0% { stroke-dashoffset: 0 }
+	}
+	</code>
+	</pre>
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+								
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="progress" data-name="Progress Bar" data-percent="70%">
+												<svg viewBox="-10 -10 220 220">
+													<g fill="none" stroke-width="10" transform="translate(100,100)">
+														<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" />
+														<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" />
+														<path d="M 86.6,50 A 100,100 0 0,1 0,100" />
+														<path d="M 0,100 A 100,100 0 0,1 -86.6,50" />
+														<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" />
+														<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" />
+													</g>
+												</svg> 
+
+												<svg viewBox="-10 -10 220 220">
+													<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="410"></path>
+												</svg> 
+											</div><!-- /.progress -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+								</div><!-- /.snippet-body -->
+
+								<style>
+									.progress:before,
+									.progress:after { position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+									.progress:after { content: attr(data-percent); z-index: 2; width: 100%; font-size: 34px; line-height: .76; color: #54585d; font-weight: 300; text-align: center; }
+									.progress:before { right: 0; content: ''; z-index: 1; width: calc(100% - 30px); height: calc(100% - 30px); border-radius: 50%; margin: 0 auto; background: #fff; }
+									.progress { overflow: hidden; position: relative; display: inline-block; width: 184px; height: 184px; border-radius: 50%; background: #01d1d5; color: #54585d; text-align: center; }
+
+									.progress svg { width: 184px; height: 184px; }
+									.progress svg:nth-child(2) { position: absolute; left: 0; top: 0; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+									.progress svg:nth-child(2) path { fill: none; stroke-width: 25; stroke-dasharray: 630; stroke: #54585d; }
+
+									.progress svg:nth-child(2) path {
+									  -webkit-animation: progress 3s;
+									     -moz-animation: progress 3s;
+									       -o-animation: progress 3s;
+									          animation: progress 3s;
+									}
+
+									@-webkit-keyframes progress { 
+									    0% { stroke-dashoffset: 0 }
+									}
+
+									@-moz-keyframes progress { 
+									    0% { stroke-dashoffset: 0 }
+									}
+
+									@keyframes progress { 
+									    0% { stroke-dashoffset: 0 }
+									}
+								</style>
+							</div><!-- /.snippet -->
+												
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">custom upload button</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+	<pre class="prettyprint lang-html">
+	<code class="lang-html">
+	&lt;div class="btn-upload"&gt;
+		&lt;i class="icon-search"&gt;&lt;/i&gt;
+
+		&lt;span&gt;Browse&lt;/span&gt;
+		&lt;input type="file" name="file" /&gt;
+	&lt;/div&gt;&lt;!-- /.btn-upload --&gt;	
+	</code>
+	</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+
+										<div class="snippet-cnt-inner">
+	<pre class="prettyprint lang-css">
+	<code class="lang-css">
+	.icon-search { display: inline-block; width: 31px; height: 30px; margin-right: 12px; background: url(css/images/search.png) 0 0 no-repeat; vertical-align: middle; }
+
+	.btn-upload { overflow: hidden; position: relative; display: block; width: 120px; height: 56px; padding: 0 20px; border: 1px solid #d1d1d1; background: #d1d1d1; font-size: 0; line-height: 0; } 
+	.btn-upload input[type="file"]{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; opacity: 0; cursor: pointer; }
+	.btn-upload span { display: inline-block; font-size: 18px; line-height: 56px; color: #55595d; vertical-align: middle; }
+
+	.btn-upload:hover { background: #e2e2e2; }
+	</code>
+	</pre>										
+										</div><!-- /.snippet-cnt-inner -->
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+
+										<div class="snippet-result">
+											<div class="btn-upload">
+												<i class="icon-search"></i>
+												<span>Browse</span>
+												<input type="file" name="file" />
+											</div><!-- /.btn-upload -->	
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+								</div><!-- /.snippet-body -->
+
+								<style>
+									.icon-search { display: inline-block; width: 31px; height: 30px; margin-right: 12px; background: url(css/images/search.png) 0 0 no-repeat; vertical-align: middle; }
+
+									.btn-upload { overflow: hidden; position: relative; display: block; width: 120px; height: 56px; padding: 0 20px; border: 1px solid #d1d1d1; background: #d1d1d1; font-size: 0; line-height: 0; } 
+									.btn-upload input[type="file"]{ position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; opacity: 0; cursor: pointer; }
+									.btn-upload span { display: inline-block; font-size: 18px; line-height: 56px; color: #55595d; vertical-align: middle; }
+
+									.btn-upload:hover { background: #e2e2e2; }
+
+									.btn-upload {
+										-webkit-transition: background .3s;
+										   -moz-transition: background .3s;
+										     -o-transition: background .3s;
+										        transition: background .3s; 
+									}
+								</style>
+							</div><!-- /.snippet -->
+
+													
+
+							<div class="snippet">
+								<div class="snippet-head">
+									<h5>
+										<span class="snippet-title">fluid video</span>
+										<small>&nbsp;</small>
+									</h5>
+								</div><!-- /.snippet-head -->
+
+								<div class="snippet-body">
+									<div class="snippet-cnt">
+										<h4>HTML Markup:</h4>
+	<pre class="prettyprint html-css">
+	<code class="lang-html">
+	&lt;div class="video"&gt;
+		&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/JYyb-CHth4M" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+	&lt;/div&gt;&lt;!-- /.video --&gt;
+	</code>
+	</pre>
+									</div><!-- /.snippet-cnt -->
+
+									<div class="snippet-cnt">
+										<h4>CSS Markup:</h4>
+	<pre class="prettyprint lang-css">
+	<code class="lang-css">
+	.video { position: relative; height: 0; padding-bottom: 56.25%; }
+	.video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+	</code>
+	</pre>
+									</div><!-- /.snippet-cnt -->
+
+								
+
+									<div class="snippet-cnt">
+										<h4>Result:</h4>
+										<div class="snippet-result">
+											<div class="video">
+												<iframe width="560" height="315" src="https://www.youtube.com/embed/UmXJ26QnszE" frameborder="0" allowfullscreen></iframe>
+											</div><!-- /.video -->
+										</div><!-- /.snippet-result -->
+									</div><!-- /.snippet-cnt -->
+
+									<style>
+										.video { position: relative; z-index: 99; height: 0; padding-bottom: 56.25%; }
+										.video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+									</style>
+								</div><!-- /.snippet-body -->
+							</div><!-- /.snippet -->
+
+						</div><!-- /.section-body -->
+					</section><!-- /.section -->
+				</div><!-- /.content -->
+			</div><!-- /.shell -->
+		</div><!-- /.main -->
+			
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="shell">
+					<p class="credits">
+						<span class="logo-footer"></span>
+						<span>Coding Standarts</span>
+					</p><!-- /.credits -->
+
+					<p class="copyrights">Powered by <a href="http://a/%%30%30">Hamaff</a></p>
+				</div><!-- /.shell -->
+			</div><!-- /.footer-inner -->
+		</footer><!-- /.footer -->
+		</div><!-- /.wrapper-inner -->
+	</div><!-- /.wrapper -->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/prism.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
